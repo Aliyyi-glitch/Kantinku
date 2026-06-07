@@ -36,10 +36,12 @@ Kantinku adalah platform manajemen kantin modern berbasis web yang dirancang unt
 ## 📸 Screenshot Website
 
 ### 1. Halaman Utama Pembeli (Katalog)
-![Katalog Pembeli](/public/build/assets/user.png)
+![Katalog Pembeli](<img width="1918" height="947" alt="Screenshot 2026-06-07 221822" src="https://github.com/user-attachments/assets/ae09ea6b-e6b7-43cc-93e5-915e8e4b55bd" />
+)
 
 ### 2. Dashboard Pedagang & Status Stan
-![Dashboard Pedagang](/public/build/assets/admin.png)
+![Dashboard Pedagang](<img width="1919" height="945" alt="Screenshot 2026-06-07 221719" src="https://github.com/user-attachments/assets/435719ab-6982-44f7-b307-5b0c853a4740" />
+)
 
 ---
 
