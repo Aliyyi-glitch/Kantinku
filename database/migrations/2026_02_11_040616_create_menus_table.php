@@ -12,10 +12,12 @@ return new class extends Migration {
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('stall_id')->constrained('stalls')->onDelete('cascade');
-            $table->string('nama_makanan');
-            $table->integer('harga');
-            $table->text('keterangan')->nullable();
+            $table->foreignId('stall_id')->constrained()->onDelete('cascade'); // Relasi ke toko pedagang
+            $table->string('name');
+            $table->string('category'); // <--- PASTIKAN KOLOM INI ADA (Makanan Berat / Jajanan / Minuman)
+            $table->integer('price');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

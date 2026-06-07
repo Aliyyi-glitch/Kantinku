@@ -14,12 +14,22 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+{
+    // 1. Buat 6 User dummy dulu supaya ID 1-6 tersedia
+    for ($i = 1; $i <= 6; $i++) {
+        \App\Models\User::updateOrCreate(
+            ['email' => "mitra{$i}@kantinku.com"],
+            [
+                'name' => "Mitra {$i}",
+                'password' => bcrypt('password'),
+            ]
+        );
     }
+
+    // 2. Sekarang panggil Seeder Stan dan Menu
+    $this->call([
+        StallSeeder::class,
+        MenuSeeder::class,
+    ]);
+}
 }

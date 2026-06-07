@@ -1,36 +1,59 @@
-@extends('layouts.app') @section('content') <div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card p-4">
-            <h4 class="fw-bold text-center mb-4">Tambah Menu Baru</h4>
-            
-            <form action="{{ route('menus.store') }}" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label class="form-label">Nama Makanan/Minuman</label>
-                    <input type="text" name="nama_makanan" class="form-control" placeholder="Contoh: Es Teh Solo">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-slate-800 leading-tight">
+            {{ __('Tambah Menu Baru') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-2xl border border-slate-100 p-8">
+                
+                <div class="flex items-center gap-3 mb-6">
+                    <a href="{{ route('dashboard') }}" class="text-slate-400 hover:text-slate-600 transition">
+                        <i class="fas fa-arrow-left text-lg"></i>
+                    </a>
+                    <h2 class="text-xl font-black text-slate-800">Form Tambah Menu Jajanan</h2>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Pilih Kantin (Stall)</label>
-                    <select name="stall_id" class="form-select" required>
-                        <option value="">-- Pilih Lokasi Kantin --</option>
-                        @foreach($stalls as $stall)
-                            <option value="{{ $stall->id }}">{{ $stall->nama_kantin }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <form action="{{ route('menus.store') }}" method="POST">
+                    @csrf
 
-                <div class="mb-3">
-                    <label class="form-label">Harga</label>
-                    <div class="input-group">
-                        <span class="input-group-text">Rp</span>
-                        <input type="number" name="harga" class="form-control">
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Nama Menu</label>
+                        <input type="text" name="name" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-orange-500" placeholder="Contoh: Ayam Geprek Spesial" required>
                     </div>
-                </div>
 
-                <button type="submit" class="btn btn-warning w-100 fw-bold text-white">Simpan ke Daftar Menu</button>
-            </form>
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Harga (Rp)</label>
+                        <input type="number" name="price" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-orange-500" placeholder="Contoh: 15000" required>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Kategori</label>
+                        <select name="category" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-orange-500" required>
+                            <option value="Makanan Berat">Makanan Berat</option>
+                            <option value="Minuman Segar">Minuman Segar</option>
+                            <option value="Jajanan Ringan">Jajanan Ringan</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Deskripsi Menu</label>
+                        <textarea name="description" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-orange-500" placeholder="Gambarkan kelezatan menu ini..." required></textarea>
+                    </div>
+
+                    <div class="mt-8 flex justify-end gap-3">
+                        <a href="{{ route('dashboard') }}" class="px-6 py-3 rounded-xl border border-slate-200 text-slate-500 text-sm font-bold hover:bg-slate-50 transition">
+                            Batal
+                        </a>
+                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition duration-200 shadow-md">
+                            Tambah Jajanan
+                        </button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
-</div>
-@endsection
+</x-app-layout>

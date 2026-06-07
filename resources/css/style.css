@@ -1,0 +1,44 @@
+/* resources/css/style.css */
+
+/* Animasi Masuk */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* Efek Glassmorphism untuk Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+    border-color: #f97316;
+}
+
+/* Badge Berkilau */
+.shiny-badge {
+    background: linear-gradient(45deg, #f97316, #fbbf24);
+    position: relative;
+    overflow: hidden;
+}
+
+.shiny-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: rgba(255,255,255,0.2);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.glass-card:hover .shiny-badge::after {
+    left: 120%;
+}
