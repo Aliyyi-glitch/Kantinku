@@ -19,9 +19,9 @@ Kantinku adalah platform manajemen kantin modern berbasis web yang dirancang unt
 
 ## 🛠️ Tech Stack
 
-* **Framework:** Laravel 11 / 12
+* **Framework:** Laravel 12
 * **Language:** PHP 8.3+
-* **Database:** MySQL / MariaDB
+* **Database:** MySQL
 * **Frontend Styles:** Tailwind CSS
 * **Icons:** FontAwesome v6
 
