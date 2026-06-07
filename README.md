@@ -43,7 +43,7 @@ Kantinku adalah platform manajemen kantin modern berbasis web yang dirancang unt
 
 ---
 
-## 👥 Nama Kelompok dan Anggota
+## 👥 Nama Anggota Kelompok
 
 * **Aliyyi Akbar** 
 * **Fachmie Firmansyah** 
